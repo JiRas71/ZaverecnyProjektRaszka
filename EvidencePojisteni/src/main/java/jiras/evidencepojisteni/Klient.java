@@ -1,15 +1,11 @@
 
 package jiras.evidencepojisteni;
-import java.io.Console;
-import java.util.Scanner;
 
 /**
  *
  * @author jiras
  */
 public class Klient {
-    
-    Scanner sc = new Scanner(System.in, "utf-8");
     
     private String jmeno;
     private String prijmeni;
