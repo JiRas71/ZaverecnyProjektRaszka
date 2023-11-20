@@ -26,21 +26,26 @@ public class EvidencePojisteni {
             System.out.println("Vyberte si akci:");
             System.out.println("1 - Přidat nového pojištěného");
             System.out.println("2 - Vypsat všechny pojištěné");
-            System.out.println("3 - vyhledat pojištěného");
+            System.out.println("3 - Vyhledat pojištěného");
             System.out.println("4 - Konec");
             volba = sc.nextLine().trim();
             System.out.println();
             // reakce na volbu
             switch (volba) {
                 case "1":
+                    // Přidá nového klienta
                     evidence.pridejKlienta(volba, volba, volba, volba);
                     break;
                 case "2":
+                    // Vypíše všechny pojištěné klienty
                     System.out.println("Výpis všech pojištěných:");
-                    System.out.println(evidence.klienti);
+                    for (Klient k : evidence.klienti){
+                        System.out.println(k);
+                    }
                     break;
                 case "3":
-                    System.out.println(evidence.najdiKlienty(volba, volba));
+                    // Vypíše nalezeného klienta
+                    System.out.println(evidence.najdiKlienty(volba, volba).get(0));
                     break;
                 case "4":
                     System.out.println("Děkuji za použití programu.");
