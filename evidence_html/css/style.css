@@ -1,0 +1,42 @@
+.navbar {
+    height: 70px;
+}
+.navbar-brand {
+    text-shadow: 1px 1px 3px white;
+}
+.nadpis-sectioin-1 {
+    text-shadow: 1px 1px 3px grey;
+}
+.poj-seznam {
+    text-shadow: 1px 1px 3px grey;
+}
+.novy-poj {
+    text-shadow: 1px 1px 3px grey;
+}
+.clovek-avatar {
+    height: 100px;
+    box-shadow: 2px 2px 3px grey;
+}
+.footer {
+    font-size: .7em;
+}
+.poj-tabulka th {
+    background-color: rgb(236, 236, 236);
+    color: black;
+    padding: 0 auto;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 4px grey;
+}
+
+.poj-tabulka td {
+    border: 1px solid gray;
+    box-shadow: 2px 2px 4px grey;
+}
+
+.btn-odstranit {
+    padding: .3em .5rem;
+    font-size: .6rem;
+    background-color: brown;
+    text-align: center;
+}
+
