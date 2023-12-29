@@ -1,6 +1,14 @@
 // Kolekce pro ukládání pojištěnců
 let pojistenci = [];
 
+// Při načítání stránky zkontrolujeme, zda localStorage obsahuje uložené pojištěnce
+window.onload = function() {
+    if (localStorage.getItem('pojistenci')) {
+        pojistenci = JSON.parse(localStorage.getItem('pojistenci'));
+        aktualizujTabulku();
+    }
+};
+
 // Funkce pro přidání pojištěnce do kolekce
 function pridejPojistence() {
     // Získání hodnot z formuláře
@@ -38,6 +46,9 @@ function pridejPojistence() {
 
     // Vyčištění formuláře
     vyprazdniFormular();
+
+    // Uložení kolekce pojištěnců do localStorage
+    ulozPojistanceDoLocalStorage();
 }
 
 // Funkce pro vyčištění formuláře
@@ -53,17 +64,20 @@ function vyprazdniFormular() {
 function odstranPojistence(index) {
     pojistenci.splice(index, 1);
     aktualizujTabulku();
+
+    // Aktualizace localStorage po odstranění
+    ulozPojistanceDoLocalStorage();
 }
 
 // Přidání mezery za každým třetím číslem telefonu
 function formatujTelefon(telefon) {
     if (telefon.length <= 9) {
         return telefon.replace(/(\d{3})(\d{3})(\d{3})/, "$1 $2 $3");
-    } else 
-    if (telefon.length >= 10){
+    } else if (telefon.length >= 10){
         return telefon.replace(/(\d{3})(\d{3})(\d{3})(\d{3})/, "$1 $2 $3 $4");
-    } else
-    return;
+    } else {
+        return;
+    }
 }
 
 // Funkce pro vytvoření a aktualizaci tabulky
@@ -107,4 +121,9 @@ function aktualizujTabulku() {
     // Odstranění stávajícího obsahu v divu a vložení nové tabulky
     tabDiv.innerHTML = '';
     tabDiv.appendChild(table);
+}
+
+// Funkce pro uložení kolekce pojištěnců do localStorage
+function ulozPojistanceDoLocalStorage() {
+    localStorage.setItem('pojistenci', JSON.stringify(pojistenci));
 }
