@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/InvoiceDatabase?createDatabaseIfNotExist=true
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  server:
+    port: 8080
+
+  springdoc:
+    api-docs.path: /api-docs
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      format_sql: true  # Přidáno pro formátování SQL
+    show-sql: true  # Přidáno pro zobrazení SQL v logu
+
+  jackson:
+    mapper:
+      accept-case-insensitive-enums: true
